@@ -1,0 +1,28 @@
+# build output
+dist/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+
+# environment variables
+.env
+.env.production
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# astro
+.astro/
+
+# copied worker file
+public/pdf.worker.min.mjs
+
+# claude code
+.claude/

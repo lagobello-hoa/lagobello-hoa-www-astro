@@ -1,0 +1,81 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+---
+
+<BaseLayout title="Contact" description="Contact the Lago Bello HOA board and management in Brownsville, Texas.">
+  <Hero title="Contact Us" subtitle="We're here to help. Reach out to the HOA board anytime." />
+
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16" aria-label="Contact information">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Mailing Address -->
+      <article class="bg-white rounded-xl p-8 shadow-sm border border-cream-dark">
+        <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+          </svg>
+        </div>
+        <h2 class="font-heading text-xl text-primary-dark mb-3">Mailing Address</h2>
+        <address class="text-slate-light not-italic leading-relaxed">
+          Lago Bello Home Owners Association, Inc.<br />
+          1000 Vittorio Alfieri Ave.<br />
+          Olmito, TX 78575
+        </address>
+      </article>
+
+      <!-- Email -->
+      <article class="bg-white rounded-xl p-8 shadow-sm border border-cream-dark">
+        <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+          </svg>
+        </div>
+        <h2 class="font-heading text-xl text-primary-dark mb-3">Email</h2>
+        <a href="mailto:board@lagohoa.org" class="text-primary hover:text-primary-light transition-colors font-semibold">
+          board@lagohoa.org
+        </a>
+        <p class="text-sm text-slate-light mt-2">We typically respond within 2–3 business days.</p>
+      </article>
+    </div>
+
+    <!-- How to reach the board -->
+    <article class="mt-8 bg-white rounded-xl p-8 shadow-sm border border-cream-dark">
+      <h2 class="font-heading text-xl text-primary-dark mb-4">How to Reach the Board</h2>
+      <div class="text-slate-light leading-relaxed space-y-3">
+        <p>
+          The best way to contact the Board is by email at
+          <a href="mailto:board@lagohoa.org" class="text-primary hover:text-primary-light font-semibold">board@lagohoa.org</a>.
+          For non-urgent matters, you can also send a letter to the Association's mailing address.
+        </p>
+        <p>
+          For maintenance requests or community concerns, please include your name, lot address,
+          and a detailed description so we can respond effectively.
+        </p>
+      </div>
+    </article>
+
+    <!-- PayHOA -->
+    <article class="mt-8 bg-primary/5 rounded-xl p-8 border border-primary/20">
+      <h2 class="font-heading text-xl text-primary-dark mb-3">Dues & Account Questions</h2>
+      <p class="text-slate-light leading-relaxed mb-2">
+        All dues must be submitted through PayHOA unless otherwise authorized by the Board.
+        Cash, personal checks, and mailed bill-pay checks are not accepted.
+      </p>
+      <p class="text-slate-light leading-relaxed mb-4">
+        Log in to view your balance, make a payment, set up autopay, or update your account information.
+      </p>
+      <a
+        href="https://app.payhoa.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-cream font-semibold rounded-lg hover:bg-primary-light transition-colors"
+      >
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+        </svg>
+        Go to PayHOA
+      </a>
+    </article>
+  </section>
+</BaseLayout>

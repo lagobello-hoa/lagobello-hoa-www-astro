@@ -1,0 +1,116 @@
+{
+  "documentGroups": [
+    {
+      "id": "ccr",
+      "title": "Declaration of Covenants, Conditions & Restrictions (CC&Rs)",
+      "description": "The CC&Rs are the primary governing document for Lago Bello Subdivision. This collection includes the original declaration, amendments, bylaws, and all referenced exhibits.",
+      "documents": [
+        {
+          "title": "Declaration of CC&Rs",
+          "slug": "declaration-of-ccr",
+          "filename": "declaration-of-ccr.pdf",
+          "date": "2017-10-06",
+          "description": "The original Declaration of Covenants, Conditions & Restrictions for Lago Bello Subdivision."
+        },
+        {
+          "title": "Declaration of CC&Rs (Recorded Copy with Exhibits)",
+          "slug": "declaration-of-ccr-recorded",
+          "filename": "declaration-of-ccr-recorded.pdf",
+          "date": "2017-10-06",
+          "description": "The officially recorded copy filed with Cameron County, Texas (Instrument No. 2017-00038179)."
+        },
+        {
+          "title": "1st Amendment — Section 2 Annexation",
+          "slug": "first-amendment-2025-annexation",
+          "filename": "first-amendment-2025-annexation.pdf",
+          "date": "2025-03-20",
+          "description": "First Amendment annexing 18 new residential lots in Section 2 into the subdivision."
+        },
+        {
+          "title": "Exhibit A — Subdivision Plat",
+          "slug": "exhibit-a-plat",
+          "filename": "exhibit-a-plat.pdf",
+          "date": "2017-10-06",
+          "description": "The official plat map showing lot boundaries and layout."
+        },
+        {
+          "title": "Exhibit B — Additional Property Map",
+          "slug": "exhibit-b-map",
+          "filename": "exhibit-b-map.pdf",
+          "date": "2017-10-06",
+          "description": "Map of additional property that may be annexed into the subdivision."
+        },
+        {
+          "title": "Exhibit C — Bylaws",
+          "slug": "exhibit-c-bylaws",
+          "filename": "exhibit-c-bylaws.pdf",
+          "date": "2017-10-06",
+          "description": "The Bylaws of Lago Bello Home Owners Association, Inc. covering board governance, voting, and officer duties."
+        },
+        {
+          "title": "Exhibit D — Open Records Policy",
+          "slug": "exhibit-d-open-records-policy",
+          "filename": "exhibit-d-open-records-policy.pdf",
+          "date": "2017-10-06",
+          "description": "The Association's policy on access to HOA records, as required by the Texas Residential Property Owners Protection Act."
+        }
+      ]
+    },
+    {
+      "id": "section-1-plat",
+      "title": "Section 1 Plat and Final Engineering Report (Recorded)",
+      "description": "The recorded subdivision plat and final engineering report for Section 1 of Lago Bello, filed with Cameron County.",
+      "documents": [
+        {
+          "title": "Signature Page — Cab 1 Pg 3622",
+          "slug": "s1-plat-sheet1-cab1pg3622",
+          "filename": "s1-plat-sheet1-cab1pg3622.pdf",
+          "date": "2018-09-18",
+          "description": "The signature page for the recorded Section 1 plat."
+        },
+        {
+          "title": "Final Plat — Cab 1 Pg 3623",
+          "slug": "s1-plat-sheet2-cab1pg3623",
+          "filename": "s1-plat-sheet2-cab1pg3623.pdf",
+          "date": "2018-09-18",
+          "description": "The final plat for Section 1 of Lago Bello Subdivision."
+        },
+        {
+          "title": "Engineering Report — Cab 1 Pg 3624",
+          "slug": "s1-plat-sheet3-cab1pg3624",
+          "filename": "s1-plat-sheet3-cab1pg3624.pdf",
+          "date": "2018-09-18",
+          "description": "The final engineering report for Section 1 of Lago Bello Subdivision."
+        }
+      ]
+    },
+    {
+      "id": "section-2-plat",
+      "title": "Section 2 Plat and Final Engineering Report (Recorded)",
+      "description": "The recorded subdivision plat and final engineering report for Section 2 of Lago Bello, filed with Cameron County.",
+      "documents": [
+        {
+          "title": "Signature Page — Cab 1 Pg 5056",
+          "slug": "s2-plat-sheet1-cab1pg5056",
+          "filename": "s2-plat-sheet1-cab1pg5056.pdf",
+          "date": "2024-03-14",
+          "description": "The signature page for the recorded Section 2 plat."
+        },
+        {
+          "title": "Final Plat — Cab 1 Pg 5057",
+          "slug": "s2-plat-sheet2-cab1pg5057",
+          "filename": "s2-plat-sheet2-cab1pg5057.pdf",
+          "date": "2024-03-14",
+          "description": "The final plat for Section 2 of Lago Bello Subdivision."
+        },
+        {
+          "title": "Engineering Report — Cab 1 Pg 5058",
+          "slug": "s2-plat-sheet3-cab1pg5058",
+          "filename": "s2-plat-sheet3-cab1pg5058.pdf",
+          "date": "2024-03-14",
+          "description": "The final engineering report for Section 2 of Lago Bello Subdivision."
+        }
+      ]
+    }
+  ]
+}

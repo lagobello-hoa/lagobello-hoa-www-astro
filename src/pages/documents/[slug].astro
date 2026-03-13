@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PdfViewer from "../../components/PdfViewer.tsx";
+import documentsData from "../../content/documents.json";
+
+export function getStaticPaths() {
+  const allDocs = documentsData.documentGroups.flatMap((group) => group.documents);
+  return allDocs.map((doc) => ({
+    params: { slug: doc.slug },
+    props: { document: doc },
+  }));
+}
+
+const { document } = Astro.props;
+const pdfPath = `/documents/${document.filename}`;
+---
+
+<BaseLayout title={document.title} description={document.description}>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Header -->
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+      <div>
+        <a
+          href="/documents/"
+          class="inline-flex items-center gap-1 text-sm text-primary hover:text-primary-light transition-colors mb-2"
+        >
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to Documents
+        </a>
+        <h1 class="font-heading text-2xl sm:text-3xl text-primary-dark">{document.title}</h1>
+      </div>
+      <a
+        href={pdfPath}
+        download
+        class="inline-flex items-center gap-2 px-4 py-2 bg-primary text-cream text-sm font-semibold rounded-lg hover:bg-primary-light transition-colors shrink-0 self-start"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+        </svg>
+        Download PDF
+      </a>
+    </div>
+
+    <!-- PDF Viewer -->
+    <PdfViewer client:load src={pdfPath} />
+  </div>
+</BaseLayout>

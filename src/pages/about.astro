@@ -1,0 +1,268 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+---
+
+<BaseLayout title="About" description="Learn about the Lago Bello community, utilities, guidelines, and how dues work in Brownsville, Texas.">
+  <Hero title="About Our Community" />
+
+  <!-- Community Description -->
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16" aria-label="Community description">
+    <h2 class="font-heading text-3xl mb-6">Our Community</h2>
+    <p class="text-lg text-slate-light leading-relaxed mb-4">
+      Lago Bello is a lakeside residential subdivision located in Brownsville, Texas.
+      Built around a scenic common area lake, the community offers a unique blend of waterfront
+      living with the warmth of South Texas. Homes range from lakefront properties to interior lots,
+      all designed for single-family residential use.
+    </p>
+    <p class="text-lg text-slate-light leading-relaxed mb-4">
+      The Lago Bello Home Owners Association, Inc. is a Texas nonprofit corporation established in 2017
+      to manage and maintain the subdivision's common areas, enforce community standards, and serve
+      the interests of all homeowners. The Association is governed by the Declaration of Covenants,
+      Conditions & Restrictions (CC&Rs) and the community Bylaws.
+    </p>
+    <p class="text-lg text-slate-light leading-relaxed">
+      In March 2025, the community expanded with the annexation of Section 2, adding 18 new residential lots.
+      All homeowners — whether in Section 1 or Section 2 — share the same rights, responsibilities, and
+      access to common areas. Learn more about the development at
+      <a href="https://www.lagobello.com" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary-light font-semibold">lagobello.com</a>.
+    </p>
+  </section>
+
+  <!-- HOA-Managed Infrastructure -->
+  <section class="bg-white border-y border-cream-dark" aria-label="Infrastructure">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <h2 class="font-heading text-3xl mb-6">HOA-Managed Infrastructure</h2>
+      <p class="text-slate-light mb-6">
+        The following infrastructure is private property owned and maintained by the HOA. Monthly dues
+        fund the upkeep of these shared assets for all homeowners.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="bg-cream rounded-xl p-5 border border-cream-dark">
+          <h3 class="font-heading text-lg text-primary-dark mb-1">Lake</h3>
+          <p class="text-sm text-slate-light">The common area lake at the heart of the community.</p>
+        </div>
+        <div class="bg-cream rounded-xl p-5 border border-cream-dark">
+          <h3 class="font-heading text-lg text-primary-dark mb-1">Gate</h3>
+          <p class="text-sm text-slate-light">The community entrance gate and access system.</p>
+        </div>
+        <div class="bg-cream rounded-xl p-5 border border-cream-dark">
+          <h3 class="font-heading text-lg text-primary-dark mb-1">Streets</h3>
+          <p class="text-sm text-slate-light">All interior streets within the subdivision.</p>
+        </div>
+        <div class="bg-cream rounded-xl p-5 border border-cream-dark">
+          <h3 class="font-heading text-lg text-primary-dark mb-1">Storm Drains</h3>
+          <p class="text-sm text-slate-light">The HOA self-manages storm drainage to the lake.</p>
+        </div>
+        <div class="bg-cream rounded-xl p-5 border border-cream-dark">
+          <h3 class="font-heading text-lg text-primary-dark mb-1">Retention Wall</h3>
+          <p class="text-sm text-slate-light">The lake retention wall protecting the shoreline.</p>
+        </div>
+      </div>
+      <div class="mt-6 bg-amber-50 rounded-xl p-5 border border-amber-200">
+        <p class="text-sm text-amber-900 leading-relaxed">
+          <strong>Keep our lake clean.</strong> All storm drains in Lago Bello feed directly into our lake.
+          It is critical that pollutants — oil, chemicals, yard waste, trash — are kept out of the
+          storm drains to protect our water quality and the community's most valuable shared resource.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Utilities -->
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16" aria-label="Utilities">
+    <h2 class="font-heading text-3xl mb-6">Utilities</h2>
+    <p class="text-slate-light mb-6">
+      The following providers serve the Lago Bello subdivision:
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-white rounded-xl p-6 border border-cream-dark">
+        <h3 class="font-heading text-lg text-primary-dark mb-2">Electric</h3>
+        <p class="text-sm text-slate-light leading-relaxed">
+          <strong>Brownsville Public Utilities Board (BPUB)</strong> provides 240V single-phase electrical service
+          to all lots.
+        </p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-cream-dark">
+        <h3 class="font-heading text-lg text-primary-dark mb-2">Water & Wastewater</h3>
+        <p class="text-sm text-slate-light leading-relaxed">
+          <strong>East Rio Hondo Water Supply Corporation</strong> provides water and wastewater services
+          to the subdivision.
+        </p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-cream-dark">
+        <h3 class="font-heading text-lg text-primary-dark mb-2">Internet</h3>
+        <p class="text-sm text-slate-light leading-relaxed">
+          <strong>Omni Fiber</strong> provides Fiber to the Home (FTTH) service to all 30 lots. Contact
+          Omni Fiber directly to set up your internet service.
+        </p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-cream-dark">
+        <h3 class="font-heading text-lg text-primary-dark mb-2">Storm Drainage</h3>
+        <p class="text-sm text-slate-light leading-relaxed">
+          The HOA self-manages storm drainage throughout the subdivision, directing runoff to the community lake.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architectural Control -->
+  <section class="bg-white border-y border-cream-dark" aria-label="Architectural control">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <h2 class="font-heading text-3xl mb-6">Architectural Control Committee (ACC)</h2>
+      <p class="text-lg text-slate-light leading-relaxed mb-6">
+        All exterior modifications — including new construction, fences, landscaping changes, and additions —
+        require prior written approval from the ACC. The committee is made up of three Association members
+        appointed annually by the Board.
+      </p>
+      <div class="bg-cream rounded-xl p-6 border border-cream-dark">
+        <h3 class="font-heading text-lg text-primary-dark mb-3">Before You Build or Modify</h3>
+        <ul class="space-y-2 text-slate-light">
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>Submit two sets of construction plans and specifications to the ACC, including a plot plan showing the proposed location on your lot.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>Wait for written ACC approval before starting any work.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>Complete all exterior work within six months of starting construction.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Guidelines -->
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16" aria-label="Community guidelines">
+    <h2 class="font-heading text-3xl mb-6">Community Guidelines at a Glance</h2>
+    <p class="text-slate-light mb-6">
+      These are highlights from the CC&Rs. For the complete details, please review the
+      <a href="/documents/" class="text-primary hover:text-primary-light font-semibold">full governing documents</a>.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="space-y-3">
+        <h3 class="font-heading text-lg text-primary-dark">Property Use</h3>
+        <ul class="space-y-2 text-slate-light text-sm">
+          <li class="flex items-start gap-2">
+            <span class="text-primary font-bold mt-0.5">•</span>
+            <span>Lots are for single-family residential use only.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-primary font-bold mt-0.5">•</span>
+            <span>No temporary structures (trailers, mobile homes, tents, etc.) may be used as residences.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-primary font-bold mt-0.5">•</span>
+            <span>Garbage must be kept in sanitary containers and disposed of regularly.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="space-y-3">
+        <h3 class="font-heading text-lg text-primary-dark">Fences & Walls</h3>
+        <ul class="space-y-2 text-slate-light text-sm">
+          <li class="flex items-start gap-2">
+            <span class="text-primary font-bold mt-0.5">•</span>
+            <span>Fences require ACC approval before construction.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-primary font-bold mt-0.5">•</span>
+            <span>Must be wood, masonry, or wrought iron — no wire or chain link.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-primary font-bold mt-0.5">•</span>
+            <span>Lakefront lots require a retaining wall before or during home construction.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="space-y-3">
+        <h3 class="font-heading text-lg text-primary-dark">Pets</h3>
+        <ul class="space-y-2 text-slate-light text-sm">
+          <li class="flex items-start gap-2">
+            <span class="text-primary font-bold mt-0.5">•</span>
+            <span>Dogs, cats, and small household pets are allowed — no livestock or poultry.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-primary font-bold mt-0.5">•</span>
+            <span>Pets must be leashed when outside the backyard and are not allowed to run free.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-primary font-bold mt-0.5">•</span>
+            <span>Dog houses and runs must be placed in the backyard, out of view from the street.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="space-y-3">
+        <h3 class="font-heading text-lg text-primary-dark">Solar, Flags & Signs</h3>
+        <ul class="space-y-2 text-slate-light text-sm">
+          <li class="flex items-start gap-2">
+            <span class="text-primary font-bold mt-0.5">•</span>
+            <span>Solar panels are allowed on rooftops with ACC approval (submit plans within 45 days).</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-primary font-bold mt-0.5">•</span>
+            <span>U.S. and Texas flags may be displayed with ACC approval; freestanding poles max 20 ft.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-primary font-bold mt-0.5">•</span>
+            <span>Political signs are allowed 90 days before an election through 10 days after.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dues & Payments -->
+  <section class="bg-white border-y border-cream-dark" aria-label="Dues and payments">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <h2 class="font-heading text-3xl mb-6">Dues & Payments</h2>
+      <p class="text-lg text-slate-light leading-relaxed mb-6">
+        Monthly dues fund the maintenance of the lake, gate, streets, storm drains, retention wall,
+        landscaping, insurance, and other community expenses.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+        <div class="bg-cream rounded-xl p-6 border border-cream-dark text-center">
+          <p class="text-3xl font-heading text-primary-dark mb-1">$100<span class="text-lg text-slate-light">/mo</span></p>
+          <p class="text-sm text-slate-light">Lakeside lots</p>
+        </div>
+        <div class="bg-cream rounded-xl p-6 border border-cream-dark text-center">
+          <p class="text-3xl font-heading text-primary-dark mb-1">$50<span class="text-lg text-slate-light">/mo</span></p>
+          <p class="text-sm text-slate-light">All other lots</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-cream-dark mb-6">
+        <p class="text-slate-light leading-relaxed">
+          Dues are due on the <strong>1st of each month</strong>. All payments must be submitted through
+          <a href="https://app.payhoa.com" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary-light font-semibold">PayHOA</a>
+          unless otherwise authorized by the Board. Cash, personal checks, and mailed bill-pay checks
+          are not accepted, as they increase the accounting burden on the Association.
+        </p>
+      </div>
+      <div class="bg-primary/5 rounded-xl p-6 border border-primary/20">
+        <h3 class="font-heading text-lg text-primary-dark mb-2">Pay Your Dues Online</h3>
+        <p class="text-slate-light mb-4">
+          Log in to PayHOA to view your balance, make a payment, or set up autopay.
+        </p>
+        <a
+          href="https://app.payhoa.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-cream font-semibold rounded-lg hover:bg-primary-light transition-colors"
+        >
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+          </svg>
+          Go to PayHOA
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

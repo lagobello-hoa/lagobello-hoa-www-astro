@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import * as pdfjsLib from "pdfjs-dist";
-import type { PDFDocumentProxy } from "pdfjs-dist";
+import type { PDFDocumentProxy, RenderTask } from "pdfjs-dist";
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
 
@@ -11,13 +11,7 @@ interface Props {
 export default function PdfViewer({ src }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const renderTaskRef = useRef<ReturnType<
-    ReturnType<PDFDocumentProxy["getPage"]> extends Promise<infer P>
-      ? P extends { render: (...args: any[]) => infer R }
-        ? () => R
-        : never
-      : never
-  > | null>(null);
+  const renderTaskRef = useRef<RenderTask | null>(null);
 
   const [pdfDoc, setPdfDoc] = useState<PDFDocumentProxy | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
@@ -63,7 +57,7 @@ export default function PdfViewer({ src }: Props) {
     try {
       // Cancel any in-progress render
       if (renderTaskRef.current) {
-        (renderTaskRef.current as any).cancel?.();
+        renderTaskRef.current.cancel();
         renderTaskRef.current = null;
       }
 
@@ -85,7 +79,7 @@ export default function PdfViewer({ src }: Props) {
         viewport,
       });
 
-      renderTaskRef.current = renderTask as any;
+      renderTaskRef.current = renderTask;
       await renderTask.promise;
     } catch (err: any) {
       if (err?.name !== "RenderingCancelledException") {

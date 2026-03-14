@@ -44,6 +44,6 @@ const pdfPath = `/documents/${document.filename}`;
     </div>
 
     <!-- PDF Viewer -->
-    <PdfViewer client:load src={pdfPath} />
+    <PdfViewer client:visible src={pdfPath} />
   </div>
 </BaseLayout>

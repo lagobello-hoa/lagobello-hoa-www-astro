@@ -10,6 +10,25 @@ interface Props {
 
 const { title, description = "Lago Bello Home Owners Association" } = Astro.props;
 const currentPath = Astro.url.pathname;
+const canonicalURL = new URL(currentPath, Astro.site);
+const fullTitle = `${title} | Lago Bello HOA`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Lago Bello Home Owners Association",
+  "url": "https://lagohoa.org",
+  "description": "Lago Bello Home Owners Association — a lakeside residential community in Brownsville, Texas.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1000 Vittorio Alfieri Ave.",
+    "addressLocality": "Olmito",
+    "addressRegion": "TX",
+    "postalCode": "78575",
+    "addressCountry": "US"
+  },
+  "email": "board@lagohoa.org"
+};
 ---
 
 <!doctype html>
@@ -19,13 +38,30 @@ const currentPath = Astro.url.pathname;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL.href} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:site_name" content="Lago Bello HOA" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
-    <title>{title} | Lago Bello HOA</title>
+    <title>{fullTitle}</title>
   </head>
   <body class="min-h-screen flex flex-col">
     <a

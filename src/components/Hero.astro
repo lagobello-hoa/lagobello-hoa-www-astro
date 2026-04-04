@@ -49,6 +49,11 @@ const { title, subtitle, large = false } = Astro.props;
           Home Owners Association
         </span>
       </h1>
+      <p class="flex items-center justify-center gap-3 text-cream/50 text-xs sm:text-sm tracking-[0.25em] uppercase mb-4" style="font-family: 'Playfair Display', serif;">
+        <span class="block w-8 h-px bg-cream/30"></span>
+        Est. 2017
+        <span class="block w-8 h-px bg-cream/30"></span>
+      </p>
     ) : (
       <h1 class:list={["font-heading text-cream leading-tight text-4xl sm:text-5xl lg:text-6xl mb-4"]}>
         {title}

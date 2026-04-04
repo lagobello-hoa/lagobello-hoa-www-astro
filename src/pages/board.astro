@@ -1,0 +1,133 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+---
+
+<BaseLayout title="Board" description="Learn about the Lago Bello HOA Board of Directors, how elections work, and how to get involved.">
+  <Hero title="Board of Directors" />
+
+  <!-- About the Board -->
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16" aria-label="About the board">
+    <h2 class="font-heading text-3xl mb-6">Your Board</h2>
+    <p class="text-lg text-slate-light leading-relaxed mb-4">
+      The Lago Bello HOA is governed by a Board of Directors elected by and from the homeowners
+      of our community. The Board is responsible for managing the Association's common areas,
+      enforcing the CC&Rs, setting the annual budget, and making decisions that protect and
+      improve our neighborhood.
+    </p>
+    <p class="text-lg text-slate-light leading-relaxed">
+      Board members are your neighbors — volunteers who dedicate their time to keeping
+      Lago Bello a great place to live. Their authority and responsibilities are defined
+      in the community
+      <a href="/documents/exhibit-c-bylaws/" class="text-primary hover:text-primary-light font-semibold">Bylaws</a>.
+    </p>
+  </section>
+
+  <!-- How Elections Work -->
+  <section class="bg-white border-y border-cream-dark" aria-label="Elections">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <h2 class="font-heading text-3xl mb-6">How Elections Work</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-cream rounded-xl p-6 border border-cream-dark">
+          <h3 class="font-heading text-lg text-primary-dark mb-3">Annual Meeting</h3>
+          <p class="text-sm text-slate-light leading-relaxed">
+            The Board of Directors is elected at the Annual Meeting of the Association. Every
+            homeowner in good standing is entitled to attend and vote. Meeting notices are sent
+            to all members in advance.
+          </p>
+        </div>
+        <div class="bg-cream rounded-xl p-6 border border-cream-dark">
+          <h3 class="font-heading text-lg text-primary-dark mb-3">Who Can Serve</h3>
+          <p class="text-sm text-slate-light leading-relaxed">
+            Any homeowner who is a member of the Association in good standing may be nominated
+            to serve on the Board. Directors serve terms as defined in the Bylaws and may be
+            re-elected.
+          </p>
+        </div>
+        <div class="bg-cream rounded-xl p-6 border border-cream-dark">
+          <h3 class="font-heading text-lg text-primary-dark mb-3">Voting</h3>
+          <p class="text-sm text-slate-light leading-relaxed">
+            Each lot is entitled to one vote. Votes may be cast in person at the Annual Meeting
+            or by proxy. A quorum of members must be present or represented for the election
+            to proceed.
+          </p>
+        </div>
+        <div class="bg-cream rounded-xl p-6 border border-cream-dark">
+          <h3 class="font-heading text-lg text-primary-dark mb-3">Officers</h3>
+          <p class="text-sm text-slate-light leading-relaxed">
+            Once elected, the Board appoints officers from among its members — typically a
+            President, Vice President, Secretary, and Treasurer — to handle the day-to-day
+            business of the Association.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Get Involved -->
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16" aria-label="Get involved">
+    <h2 class="font-heading text-3xl mb-6">Get Involved</h2>
+    <p class="text-lg text-slate-light leading-relaxed mb-8">
+      A strong community depends on the participation of its residents. Whether you have
+      five minutes or five hours a month, there are meaningful ways to contribute.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-xl p-6 border border-cream-dark">
+        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h3 class="font-heading text-lg text-primary-dark mb-2">Attend Meetings</h3>
+        <p class="text-sm text-slate-light leading-relaxed">
+          Come to the Annual Meeting and any special meetings called by the Board. Your voice
+          and your vote shape the direction of our community.
+        </p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-cream-dark">
+        <div class="w-12 h-12 bg-sage/20 rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-sage" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+          </svg>
+        </div>
+        <h3 class="font-heading text-lg text-primary-dark mb-2">Volunteer</h3>
+        <p class="text-sm text-slate-light leading-relaxed">
+          The ACC, lake maintenance, landscaping, and community events all benefit from resident
+          volunteers. No experience needed — just a willingness to pitch in.
+        </p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-cream-dark">
+        <div class="w-12 h-12 bg-lake/10 rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-lake" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h3 class="font-heading text-lg text-primary-dark mb-2">Run for the Board</h3>
+        <p class="text-sm text-slate-light leading-relaxed">
+          Interested in helping guide our community? Consider running for a seat on the Board
+          at the next Annual Meeting. New perspectives are always welcome.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="bg-white border-y border-cream-dark" aria-label="Contact the board">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+      <h2 class="font-heading text-3xl mb-4">Questions or Ideas?</h2>
+      <p class="text-lg text-slate-light leading-relaxed mb-6 max-w-2xl mx-auto">
+        The Board is always open to hearing from homeowners. Whether you have a question,
+        a suggestion, or want to learn more about getting involved, don't hesitate to reach out.
+      </p>
+      <a
+        href="mailto:board@lagohoa.org"
+        class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-cream font-semibold rounded-lg hover:bg-primary-light transition-colors"
+      >
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+        </svg>
+        Email the Board
+      </a>
+    </div>
+  </section>
+</BaseLayout>

@@ -10,14 +10,15 @@ const { title, subtitle, large = false } = Astro.props;
 
 <section class:list={["relative text-cream overflow-hidden", large ? "bg-primary-dark" : "bg-gradient-to-br from-primary-dark via-primary to-lake"]}>
   {large ? (
-    <!-- Large hero with lake illustration -->
+    <!-- Large hero with background photo -->
     <div class="absolute inset-0">
-      <div class="absolute inset-0 bg-gradient-to-b from-primary-dark via-primary/90 to-lake/80"></div>
-      <svg class="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 200" preserveAspectRatio="none" style="height: 120px;">
-        <path d="M0 80 C360 20, 720 140, 1440 60 L1440 200 L0 200Z" fill="#4ab8d6" opacity="0.2" />
-        <path d="M0 100 C300 50, 600 150, 1440 80 L1440 200 L0 200Z" fill="#4ab8d6" opacity="0.15" />
-        <path d="M0 130 C400 90, 800 170, 1440 110 L1440 200 L0 200Z" fill="#4ab8d6" opacity="0.1" />
-      </svg>
+      <img
+        src="/hero-retention-wall.jpg"
+        alt=""
+        class="absolute inset-0 w-full h-full object-cover"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-primary-dark/70 via-primary-dark/50 to-primary-dark/80"></div>
       <svg class="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 60" preserveAspectRatio="none" style="height: 30px;">
         <path d="M0 30 Q360 0 720 30 T1440 20 L1440 60 L0 60Z" fill="#faf8f2" />
       </svg>
@@ -33,9 +34,26 @@ const { title, subtitle, large = false } = Astro.props;
     </div>
   )}
   <div class:list={["relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center", large ? "py-28 sm:py-36 lg:py-44" : "py-20 sm:py-28"]}>
-    <h1 class:list={["font-heading text-cream leading-tight", large ? "text-4xl sm:text-5xl lg:text-7xl mb-6" : "text-4xl sm:text-5xl lg:text-6xl mb-4"]}>
-      {title}
-    </h1>
+    {large ? (
+      <h1 class="mb-6">
+        <span
+          class="block text-6xl sm:text-7xl lg:text-9xl mb-2 text-white drop-shadow-lg"
+          style="font-family: 'Pinyon Script', cursive; color: #c8dde5;"
+        >
+          Lago Bello
+        </span>
+        <span
+          class="block text-2xl sm:text-3xl lg:text-4xl tracking-widest uppercase text-cream/90 drop-shadow-md"
+          style="font-family: 'Playfair Display', 'Times New Roman', serif; letter-spacing: 0.15em;"
+        >
+          Home Owners Association
+        </span>
+      </h1>
+    ) : (
+      <h1 class:list={["font-heading text-cream leading-tight text-4xl sm:text-5xl lg:text-6xl mb-4"]}>
+        {title}
+      </h1>
+    )}
     {subtitle && (
       <p class:list={["text-cream/80 max-w-2xl mx-auto leading-relaxed", large ? "text-xl sm:text-2xl" : "text-lg sm:text-xl"]}>
         {subtitle}

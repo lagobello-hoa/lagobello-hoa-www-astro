@@ -81,8 +81,8 @@ export default function PdfViewer({ src }: Props) {
 
       renderTaskRef.current = renderTask;
       await renderTask.promise;
-    } catch (err: any) {
-      if (err?.name !== "RenderingCancelledException") {
+    } catch (err: unknown) {
+      if (err instanceof Error && err.name !== "RenderingCancelledException") {
         console.error("Page render error:", err);
       }
     }

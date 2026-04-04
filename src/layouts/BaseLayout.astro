@@ -46,9 +46,13 @@ const jsonLd = {
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL.href} />
     <meta property="og:site_name" content="Lago Bello HOA" />
+    <meta property="og:image" content={new URL("/hero-retention-wall.jpg", Astro.site).href} />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="720" />
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={new URL("/hero-retention-wall.jpg", Astro.site).href} />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
 

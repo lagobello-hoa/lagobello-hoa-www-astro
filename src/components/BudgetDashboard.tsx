@@ -12,6 +12,7 @@ import {
   Legend,
   Filler,
 } from "chart.js";
+import type { TooltipItem } from "chart.js";
 import { Bar, Doughnut, Line } from "react-chartjs-2";
 
 ChartJS.register(
@@ -258,14 +259,14 @@ export default function BudgetDashboard() {
       legend: { position: "top" as const },
       tooltip: {
         callbacks: {
-          label: (ctx: any) => `${ctx.dataset.label}: ${formatCurrency(ctx.raw)}`,
+          label: (ctx: TooltipItem<"bar">) => `${ctx.dataset.label}: ${formatCurrency(ctx.raw as number)}`,
         },
       },
     },
     scales: {
       y: {
         ticks: {
-          callback: (v: any) => formatCurrency(v),
+          callback: (v: string | number) => formatCurrency(v as number),
         },
       },
     },
@@ -278,14 +279,14 @@ export default function BudgetDashboard() {
       legend: { position: "top" as const },
       tooltip: {
         callbacks: {
-          label: (ctx: any) => `${ctx.dataset.label}: ${formatCurrency(ctx.raw)}`,
+          label: (ctx: TooltipItem<"line">) => `${ctx.dataset.label}: ${formatCurrency(ctx.raw as number)}`,
         },
       },
     },
     scales: {
       y: {
         ticks: {
-          callback: (v: any) => formatCurrency(v),
+          callback: (v: string | number) => formatCurrency(v as number),
         },
       },
     },
@@ -301,7 +302,7 @@ export default function BudgetDashboard() {
       },
       tooltip: {
         callbacks: {
-          label: (ctx: any) => {
+          label: (ctx: TooltipItem<"doughnut">) => {
             const val = ctx.raw as number;
             const pct = totalExpenses > 0 ? ((val / totalExpenses) * 100).toFixed(1) : "0";
             return `${ctx.label}: ${formatCurrency(val)} (${pct}%)`;

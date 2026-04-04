@@ -327,7 +327,7 @@ export default function BudgetDashboard() {
   return (
     <div className="space-y-8">
       {/* Year selector */}
-      {years.length > 1 && (
+      {years.length > 1 ? (
         <div className="flex items-center gap-3">
           <label htmlFor="year-select" className="text-sm font-semibold text-gray-700">
             Fiscal Year:
@@ -343,6 +343,10 @@ export default function BudgetDashboard() {
             ))}
           </select>
         </div>
+      ) : (
+        <h2 className="text-2xl font-bold text-[#0f4a3e]" style={{ fontFamily: "'DM Serif Display', serif" }}>
+          {selectedYear} Budget
+        </h2>
       )}
 
       {/* Summary cards */}

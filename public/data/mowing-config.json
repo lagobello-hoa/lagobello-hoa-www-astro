@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "_doc": "Mowing manifest configuration. Lots not listed in managedLots default to managed_by='hoa'. Edit this file to mark lots as Hacienda/developer-managed or to apply special pricing classes.",
+  "mowingHoldRule": {
+    "field": "90+ Days Past",
+    "operator": ">",
+    "amount": 0
+  },
+  "builtHouseAddresses": [
+    "1311 GIUSEPPE VERDI AVE.",
+    "1315 Giuseppe Verdi Ave.",
+    "1320 Giuseppe Verdi Ave.",
+    "1327 GIUSEPPE VERDI AVE."
+  ],
+  "pricingDefaults": {
+    "lot_1_common_areas": 120,
+    "small_house": 35,
+    "small_empty_lot": 25,
+    "large_house": 40,
+    "large_empty_lot": 40
+  },
+  "managedLots": [
+    {
+      "lot_key": "S1-B1-L1",
+      "address": "1304 Giuseppe Verdi Ave",
+      "managed_by": "hoa",
+      "special_mowing_class": "lot_1_common_areas",
+      "notes": "Lot #1 + common areas"
+    }
+  ]
+}

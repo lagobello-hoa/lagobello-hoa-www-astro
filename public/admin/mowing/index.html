@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Mowing Manifest Generator — Lago Bello HOA</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="./mowing.css" />
+  </head>
+  <body>
+    <header class="app-header no-print">
+      <div>
+        <h1>Lago Bello HOA — Mowing Manifest Generator</h1>
+        <p class="muted" id="generated-at"></p>
+      </div>
+      <span id="status-pill" class="pill pill-warn">No CSV loaded</span>
+    </header>
+
+    <!-- Print-only header -->
+    <div class="print-only print-header">
+      <h1>LAGO BELLO HOA — MOWING MANIFEST</h1>
+      <p id="print-generated-at"></p>
+    </div>
+
+    <main>
+      <!-- Instructions -->
+      <section class="card no-print">
+        <h2>How to use</h2>
+        <ol>
+          <li>Export the <strong>Aging of Accounts</strong> report from PayHOA as CSV.</li>
+          <li>Upload it below — all parsing happens locally in your browser.</li>
+          <li>Review the <span class="legend-pill green">GREEN</span> /
+              <span class="legend-pill red">RED</span> /
+              <span class="legend-pill blue">BLUE</span> map and table.</li>
+          <li>Adjust pricing if needed.</li>
+          <li>Click <em>Print / Save PDF</em> for the contractor-facing manifest.</li>
+        </ol>
+        <p>
+          <a download href="./fake-payhoa-aging-template.csv" class="btn btn-secondary">
+            Download fake PayHOA CSV template
+          </a>
+        </p>
+        <p class="muted small">
+          This page runs entirely in your browser. PayHOA aging data is never uploaded anywhere.
+          The contractor-facing PDF does not include owner names or balances.
+        </p>
+      </section>
+
+      <!-- CSV Upload -->
+      <section class="card no-print">
+        <h2>1. Upload PayHOA Aging CSV</h2>
+        <input type="file" id="csv-input" accept=".csv,text/csv" />
+        <div id="csv-status" class="csv-status"></div>
+      </section>
+
+      <!-- Built Houses Editor -->
+      <section class="card no-print">
+        <h2>2. Built houses</h2>
+        <p class="muted small">
+          Built houses use <em>house</em> pricing. All other lots use <em>empty-lot</em> pricing.
+          School-side lots are small. Lake-side lots are large. One address per line.
+        </p>
+        <textarea id="built-houses" rows="6" spellcheck="false"></textarea>
+        <div class="row">
+          <button id="save-houses" class="btn btn-secondary">Save built-house list</button>
+          <button id="reset-houses" class="btn btn-link">Reset to default</button>
+        </div>
+      </section>
+
+      <!-- Pricing -->
+      <section class="card no-print">
+        <h2>3. Pricing</h2>
+        <div id="pricing-controls" class="pricing-grid"></div>
+        <button id="reset-pricing" class="btn btn-link">Reset to defaults</button>
+      </section>
+
+      <!-- Summary cards -->
+      <section class="summary">
+        <div class="summary-card summary-green">
+          <div class="summary-label">MOW</div>
+          <div class="summary-value" id="count-green">0</div>
+        </div>
+        <div class="summary-card summary-red">
+          <div class="summary-label">HOA Hold</div>
+          <div class="summary-value" id="count-red">0</div>
+        </div>
+        <div class="summary-card summary-blue">
+          <div class="summary-label">Developer Managed</div>
+          <div class="summary-value" id="count-blue">0</div>
+        </div>
+        <div class="summary-card summary-total">
+          <div class="summary-label">Total Payable</div>
+          <div class="summary-value" id="total-payable">$0</div>
+        </div>
+      </section>
+
+      <!-- Map -->
+      <section class="card map-card">
+        <h2>Mowing map</h2>
+        <p class="legend">
+          <span class="legend-pill green">GREEN — MOW</span>
+          <span class="legend-pill red">RED — DO NOT MOW (HOA HOLD)</span>
+          <span class="legend-pill blue">BLUE — DEVELOPER MANAGED</span>
+        </p>
+        <div id="map"></div>
+        <p id="map-warning" class="muted small"></p>
+      </section>
+
+      <!-- Invoice -->
+      <section class="card invoice-card">
+        <h2>Invoice summary</h2>
+        <table id="invoice-table" class="data-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th class="num">Unit price</th>
+              <th class="num">Qty</th>
+              <th class="num">Amount</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+          <tfoot>
+            <tr>
+              <th colspan="3">Total payable</th>
+              <th class="num" id="invoice-total">$0</th>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+
+      <!-- Manifest table -->
+      <section class="card">
+        <h2>Contractor manifest</h2>
+        <div class="table-wrap">
+          <table id="manifest-table" class="data-table">
+            <thead>
+              <tr>
+                <th>Action</th>
+                <th>Lot</th>
+                <th>Address</th>
+                <th>Class</th>
+                <th>Side / Type</th>
+                <th class="num">Price</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Action buttons -->
+      <section class="actions no-print">
+        <button id="btn-print" class="btn btn-primary">Print / Save PDF</button>
+        <button id="btn-export-csv" class="btn">Download contractor CSV</button>
+        <button id="btn-export-json" class="btn btn-link">Download manifest JSON</button>
+      </section>
+
+      <!-- Warnings -->
+      <section id="warnings" class="warnings no-print"></section>
+    </main>
+
+    <footer class="print-only">
+      <p>
+        Generated from PayHOA aging export. Do not rely on this document for owner account balances.
+      </p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
+    <script src="./mowing.js"></script>
+  </body>
+</html>

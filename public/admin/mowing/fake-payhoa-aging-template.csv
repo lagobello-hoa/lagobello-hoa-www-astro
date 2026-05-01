@@ -1,0 +1,13 @@
+Unit Title,Unit Address,Total Due,Currently Due,1-30 Days Past,31-60 Days Past,61-90 Days Past,90+ Days Past
+Sample Current Owner,"100 SAMPLE SCHOOL-SIDE AVE
+OLMITO, Texas 78575",0,0,,,,
+Sample Minor Balance,"104 SAMPLE SCHOOL-SIDE AVE
+OLMITO, Texas 78575",100,100,,,,
+Sample 90 Day Hold,"108 SAMPLE LAKE-SIDE AVE
+OLMITO, Texas 78575",2797.50,200,313,313.75,310,1660.75
+Sample 90 Day Hold 2,"112 SAMPLE LAKE-SIDE AVE
+OLMITO, Texas 78575",583,50,80.75,81.50,80,290.75
+Sample Empty Lot,"116 SAMPLE SCHOOL-SIDE AVE
+OLMITO, Texas 78575",0,0,,,,
+Sample Late But Under 90,"120 SAMPLE LAKE-SIDE AVE
+OLMITO, Texas 78575",354.50,50,50.75,51.50,50,

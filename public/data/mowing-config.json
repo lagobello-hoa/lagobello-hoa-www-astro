@@ -1,6 +1,9 @@
 {
-  "version": 2,
-  "_doc": "Mowing manifest configuration. Management rule: lots present in the uploaded PayHOA aging CSV are HOA-managed; lots not present are Hacienda (developer-managed, BLUE). Use managedLots entries below to override on a per-lot basis (e.g. force HOA management for Lot #1 + common areas) or to apply a special pricing class.",
+  "version": 3,
+  "_doc": "Mowing manifest configuration. Management rule: lots whose Owner Information in the PayHOA Member Contact CSV matches a name in developerOwnerNames are Hacienda (developer-managed, BLUE). All other lots are HOA-managed (GREEN, or RED if 90+ days past due in the Aging CSV). Use managedLots entries below to override on a per-lot basis (e.g. force HOA management for Lot #1 + common areas) or to apply a special pricing class.",
+  "developerOwnerNames": [
+    "Hacienda Lakeview Inc"
+  ],
   "mowingHoldRule": {
     "field": "90+ Days Past",
     "operator": ">",
@@ -10,7 +13,8 @@
     "1311 GIUSEPPE VERDI AVE.",
     "1315 Giuseppe Verdi Ave.",
     "1320 Giuseppe Verdi Ave.",
-    "1327 GIUSEPPE VERDI AVE."
+    "1327 GIUSEPPE VERDI AVE.",
+    "1343 GIUSEPPE VERDI AVE."
   ],
   "pricingDefaults": {
     "lot_1_common_areas": 120,

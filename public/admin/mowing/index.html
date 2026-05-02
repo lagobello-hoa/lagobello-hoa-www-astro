@@ -28,8 +28,8 @@
       <section class="card no-print">
         <h2>How to use</h2>
         <ol>
-          <li>Export the <strong>Aging of Accounts</strong> report from PayHOA as CSV.</li>
-          <li>Upload it below — all parsing happens locally in your browser.</li>
+          <li>Export the <strong>Member Contact Info</strong> and <strong>Aging of Accounts</strong> reports from PayHOA as CSV.</li>
+          <li>Upload both below — all parsing happens locally in your browser.</li>
           <li>Review the <span class="legend-pill green">GREEN</span> /
               <span class="legend-pill red">RED</span> /
               <span class="legend-pill blue">BLUE</span> map and table.</li>
@@ -37,29 +37,42 @@
           <li>Click <em>Print / Save PDF</em> for the contractor-facing manifest.</li>
         </ol>
         <p class="muted small">
-          <strong>Rule:</strong> lots present in the PayHOA CSV are HOA-managed
-          (<span class="legend-pill green">GREEN — MOW</span> or
-          <span class="legend-pill red">RED — HOA HOLD</span> if 90+ days past due).
-          Lots not in the CSV are Developer-managed
-          (<span class="legend-pill blue">BLUE — DO NOT MOW</span>). Edit
-          <code>public/data/mowing-config.json</code> to override on a per-lot basis.
+          <strong>Rules:</strong> Lots owned by the developer
+          (<em>Hacienda Lakeview Inc</em>) per the Member Contact CSV are
+          <span class="legend-pill blue">BLUE — DO NOT MOW</span>. All other
+          lots are HOA-managed: <span class="legend-pill green">GREEN — MOW</span> by default,
+          <span class="legend-pill red">RED — HOA HOLD</span> if the Aging CSV shows 90+ days past due.
+          Edit <code>public/data/mowing-config.json</code> to override on a per-lot basis.
         </p>
         <p>
+          <a download href="./fake-payhoa-member-contact-template.csv" class="btn btn-secondary">
+            Download fake Member Contact CSV
+          </a>
           <a download href="./fake-payhoa-aging-template.csv" class="btn btn-secondary">
-            Download fake PayHOA CSV template
+            Download fake Aging CSV
           </a>
         </p>
         <p class="muted small">
-          This page runs entirely in your browser. PayHOA aging data is never uploaded anywhere.
-          The contractor-facing PDF does not include owner names or balances.
+          This page runs entirely in your browser. PayHOA data is never uploaded anywhere.
+          The contractor-facing PDF does not include owner names, emails, phones, or balances.
         </p>
       </section>
 
-      <!-- CSV Upload -->
+      <!-- CSV Uploads -->
       <section class="card no-print">
-        <h2>1. Upload PayHOA Aging CSV</h2>
-        <input type="file" id="csv-input" accept=".csv,text/csv" />
-        <div id="csv-status" class="csv-status"></div>
+        <h2>1. Upload PayHOA CSVs</h2>
+        <div class="upload-row">
+          <label class="upload-cell">
+            <span class="upload-label">Member Contact Info</span>
+            <input type="file" id="csv-members-input" accept=".csv,text/csv" />
+            <div id="csv-members-status" class="csv-status"></div>
+          </label>
+          <label class="upload-cell">
+            <span class="upload-label">Aging of Accounts</span>
+            <input type="file" id="csv-input" accept=".csv,text/csv" />
+            <div id="csv-status" class="csv-status"></div>
+          </label>
+        </div>
       </section>
 
       <!-- Built Houses Editor -->

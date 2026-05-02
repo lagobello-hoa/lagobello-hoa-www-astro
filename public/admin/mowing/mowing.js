@@ -48,7 +48,9 @@
     config: null,
     polygons: null,         // FeatureCollection or null
     polygonsApproximate: false,
-    csvRows: [],
+    csvRows: [],            // aging CSV rows
+    membersByStreet: null,  // Map<streetNumber, ownerInfoString> or null when not loaded
+    membersLoaded: false,
     pricing: {},
     builtHouses: [],
     manifest: [],
@@ -253,14 +255,70 @@
     const el = $("#csv-status");
     el.textContent = text;
     el.className = "csv-status " + (level || "");
+    updateOverallPill();
+  }
+
+  function showMembersStatus(text, level) {
+    const el = $("#csv-members-status");
+    el.textContent = text;
+    el.className = "csv-status " + (level || "");
+    updateOverallPill();
+  }
+
+  function updateOverallPill() {
     const pill = $("#status-pill");
-    if (level === "ok") {
-      pill.textContent = "CSV loaded";
+    const parts = [];
+    if (STATE.membersLoaded) parts.push("Members");
+    if (STATE.csvLoaded) parts.push("Aging");
+    if (parts.length === 0) {
+      pill.textContent = "No CSV loaded";
+      pill.className = "pill pill-warn";
+    } else {
+      pill.textContent = parts.join(" + ") + " loaded";
       pill.className = "pill pill-ok";
-    } else if (level === "err") {
-      pill.textContent = "CSV error";
-      pill.className = "pill pill-error";
     }
+  }
+
+  function handleMembersFile(file) {
+    Papa.parse(file, {
+      header: true,
+      skipEmptyLines: true,
+      transformHeader: (h) => h.trim(),
+      complete: (results) => {
+        const headers = results.meta.fields || [];
+        if (!headers.includes("Owner Information")) {
+          showMembersStatus(`Missing required column "Owner Information".`, "err");
+          STATE.membersLoaded = false;
+          STATE.membersByStreet = null;
+          render();
+          return;
+        }
+        const map = new Map();
+        let count = 0;
+        for (const row of results.data) {
+          const num = extractStreetNumber(row["Unit Name"]) || extractStreetNumber(row["Unit Address"]);
+          const owner = String(row["Owner Information"] || "").trim();
+          if (num && owner) {
+            // Multiple owners may share an address; keep the first non-empty
+            if (!map.has(num)) map.set(num, owner);
+            count++;
+          }
+        }
+        STATE.membersByStreet = map;
+        STATE.membersLoaded = true;
+        showMembersStatus(`Loaded ${count} member rows from ${file.name}.`, "ok");
+        computeManifest();
+        render();
+      },
+      error: (err) => showMembersStatus("Failed to parse CSV: " + err.message, "err"),
+    });
+  }
+
+  function isDeveloperOwner(ownerInfo) {
+    if (!ownerInfo) return false;
+    const upper = ownerInfo.toUpperCase();
+    const names = STATE.config?.developerOwnerNames || [];
+    return names.some((n) => upper.includes(String(n).toUpperCase()));
   }
 
   // Index CSV rows by street number for lookup
@@ -312,10 +370,21 @@
         matchedCsvRows.add(row);
       }
 
-      // Management rule: CSV presence determines HOA management.
-      // Config override (cfg.managed_by) wins when explicitly set.
-      // Otherwise: matched in CSV → HOA; not matched → Hacienda (developer).
-      const managed_by = cfg?.managed_by || (csvMatches.length > 0 ? "hoa" : "hacienda");
+      // Management rule (priority order):
+      //   1. Config override (cfg.managed_by) wins when explicitly set.
+      //   2. If member contact CSV is loaded, owner info determines:
+      //      - matches a developerOwnerNames entry → "hacienda"
+      //      - any other owner → "hoa"
+      //   3. Fallback (no member CSV): aging-CSV presence rule.
+      let managed_by;
+      if (cfg?.managed_by) {
+        managed_by = cfg.managed_by;
+      } else if (STATE.membersLoaded) {
+        const ownerInfo = num ? STATE.membersByStreet.get(num) : null;
+        managed_by = isDeveloperOwner(ownerInfo) ? "hacienda" : "hoa";
+      } else {
+        managed_by = csvMatches.length > 0 ? "hoa" : "hacienda";
+      }
 
       let action;
       if (managed_by === "hacienda") action = "DEVELOPER_MANAGED";
@@ -601,6 +670,11 @@
     $("#csv-input").addEventListener("change", e => {
       const file = e.target.files?.[0];
       if (file) handleCsvFile(file);
+    });
+
+    $("#csv-members-input").addEventListener("change", e => {
+      const file = e.target.files?.[0];
+      if (file) handleMembersFile(file);
     });
 
     $("#save-houses").addEventListener("click", () => {

@@ -27,7 +27,9 @@ public/pdf.worker.min.mjs
 # claude code
 .claude/
 
-# never commit real PayHOA aging exports — they contain owner balances
+# never commit real PayHOA exports — they contain owner balances and PII
 public/admin/mowing/aging-*.csv
 public/admin/mowing/payhoa-*.csv
+public/admin/mowing/member-*.csv
 aging-of-accounts*.csv
+member-contact-info*.csv

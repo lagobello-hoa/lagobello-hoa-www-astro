@@ -120,11 +120,30 @@ textarea {
   resize: vertical;
 }
 
-.csv-status { margin-top: 0.75rem; font-size: 0.9rem; }
+.csv-status { margin-top: 0.4rem; font-size: 0.85rem; min-height: 1.2em; }
 .csv-status.ok { color: #166534; }
 .csv-status.err { color: #991b1b; }
 
 input[type="file"] { font-size: 0.9rem; }
+
+.upload-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+@media (min-width: 640px) {
+  .upload-row { grid-template-columns: 1fr 1fr; }
+}
+.upload-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.75rem;
+  border: 1px dashed var(--border);
+  border-radius: 6px;
+  background: #f8fafc;
+}
+.upload-label { font-weight: 600; font-size: 0.85rem; color: var(--primary-dark); }
 
 /* Pricing grid */
 .pricing-grid {

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "_doc": "Mowing manifest configuration. Lots not listed in managedLots default to managed_by='hoa'. Edit this file to mark lots as Hacienda/developer-managed or to apply special pricing classes.",
+  "_doc": "Mowing manifest configuration. Management rule: lots present in the uploaded PayHOA aging CSV are HOA-managed; lots not present are Hacienda (developer-managed, BLUE). Use managedLots entries below to override on a per-lot basis (e.g. force HOA management for Lot #1 + common areas) or to apply a special pricing class.",
   "mowingHoldRule": {
     "field": "90+ Days Past",
     "operator": ">",
@@ -23,9 +23,8 @@
     {
       "lot_key": "S1-B1-L1",
       "address": "1304 Giuseppe Verdi Ave",
-      "managed_by": "hoa",
       "special_mowing_class": "lot_1_common_areas",
-      "notes": "Lot #1 + common areas"
+      "notes": "Lot #1 + common areas (priced as common-area mow when HOA-managed)"
     }
   ]
 }

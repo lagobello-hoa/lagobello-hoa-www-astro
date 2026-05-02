@@ -36,6 +36,14 @@
           <li>Adjust pricing if needed.</li>
           <li>Click <em>Print / Save PDF</em> for the contractor-facing manifest.</li>
         </ol>
+        <p class="muted small">
+          <strong>Rule:</strong> lots present in the PayHOA CSV are HOA-managed
+          (<span class="legend-pill green">GREEN — MOW</span> or
+          <span class="legend-pill red">RED — HOA HOLD</span> if 90+ days past due).
+          Lots not in the CSV are Developer-managed
+          (<span class="legend-pill blue">BLUE — DO NOT MOW</span>). Edit
+          <code>public/data/mowing-config.json</code> to override on a per-lot basis.
+        </p>
         <p>
           <a download href="./fake-payhoa-aging-template.csv" class="btn btn-secondary">
             Download fake PayHOA CSV template

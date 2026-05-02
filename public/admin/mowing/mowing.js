@@ -308,7 +308,6 @@
     for (const lot of STATE.lots) {
       if (!lot.lot_key) continue;
       const cfg = getManagedLotConfig(lot.lot_key);
-      const managed_by = cfg?.managed_by || "hoa";
       const mowing_class = deriveMowingClass(lot, builtHouseStreetNumbers, cfg);
       const num = extractStreetNumber(lot.address);
       const csvMatches = num ? (csvIndex.get(num) || []) : [];
@@ -317,6 +316,11 @@
         if (parseMoney(row["90+ Days Past"]) > 0) isNinetyPlus = true;
         matchedCsvRows.add(row);
       }
+
+      // Management rule: CSV presence determines HOA management.
+      // Config override (cfg.managed_by) wins when explicitly set.
+      // Otherwise: matched in CSV → HOA; not matched → Hacienda (developer).
+      const managed_by = cfg?.managed_by || (csvMatches.length > 0 ? "hoa" : "hacienda");
 
       let action;
       if (managed_by === "hacienda") action = "DEVELOPER_MANAGED";

@@ -23,8 +23,9 @@
     {
       "lot_key": "S1-B1-L1",
       "address": "1304 Giuseppe Verdi Ave",
+      "managed_by": "hoa",
       "special_mowing_class": "lot_1_common_areas",
-      "notes": "Lot #1 + common areas (priced as common-area mow when HOA-managed)"
+      "notes": "Lot #1 + common areas — always HOA-managed regardless of CSV presence"
     }
   ]
 }

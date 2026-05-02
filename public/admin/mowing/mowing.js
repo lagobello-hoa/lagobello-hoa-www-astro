@@ -14,10 +14,10 @@
 
   const PRICING_KEYS = [
     { key: "lot_1_common_areas", label: "Lot #1 + common areas", min: 0, max: 250, step: 5 },
-    { key: "small_house",         label: "Small house (school-side)", min: 0, max: 100, step: 5 },
-    { key: "small_empty_lot",     label: "Small empty lot (school-side)", min: 0, max: 100, step: 5 },
-    { key: "large_house",         label: "Large house (lake-side)", min: 0, max: 100, step: 5 },
-    { key: "large_empty_lot",     label: "Large empty lot (lake-side)", min: 0, max: 100, step: 5 },
+    { key: "small_house",         label: "School-side house", min: 0, max: 100, step: 5 },
+    { key: "small_empty_lot",     label: "School-side vacant lot", min: 0, max: 100, step: 5 },
+    { key: "large_house",         label: "Lake-side house", min: 0, max: 100, step: 5 },
+    { key: "large_empty_lot",     label: "Lake-side vacant lot", min: 0, max: 100, step: 5 },
   ];
 
   const CONTRACTOR_LABELS = {
@@ -28,19 +28,14 @@
 
   const CLASS_LABELS = {
     lot_1_common_areas: "Lot #1 + common areas",
-    small_house: "Small house",
-    small_empty_lot: "Small empty lot",
-    large_house: "Large house",
-    large_empty_lot: "Large empty lot",
+    small_house: "School-side house",
+    small_empty_lot: "School-side vacant lot",
+    large_house: "Lake-side house",
+    large_empty_lot: "Lake-side vacant lot",
   };
 
-  const SIDE_LABELS = {
-    lot_1_common_areas: "Lot #1 + common areas",
-    small_house: "School-side house",
-    small_empty_lot: "School-side empty lot",
-    large_house: "Lake-side house",
-    large_empty_lot: "Lake-side empty lot",
-  };
+  // Same as CLASS_LABELS now that we use side-based naming throughout
+  const SIDE_LABELS = CLASS_LABELS;
 
   const STYLE_BY_ACTION = {
     MOW:                  { color: "#15803d", fillColor: "#22c55e", fillOpacity: 0.45, weight: 3 },

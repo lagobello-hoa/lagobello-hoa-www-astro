@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "repository": "lagobello-hoa/lagobello-hoa-www-astro",
+  "scope": "additive-project-documentation",
+  "source_policy": "Exact source bytes hashed before extraction; historical records are not current service verification. Original attribution retained. Source identifiers are provenance labels, not runtime filesystem dependencies.",
+  "license_policy": "Owner-authorized internal migration; no new license grant. Retain declared source licenses and notices. References without independently established rights require review before external redistribution.",
+  "skills": [
+    {
+      "name": "lagohoa-website-link-review",
+      "skill_path": "skills/lagohoa-website-link-review/SKILL.md",
+      "output_sha256": "bca8f29ab316a47db7c13e1f0860a8b1107c5d025580fb56456a71a5d11e53f9",
+      "supporting_files": [],
+      "sources": [
+        {
+          "sha256": "63bfca5b482faa888cd62ed56988203511648aabbfcc91f727af902dd618b557",
+          "declared_license": "MIT in parent skill frontmatter; retained attribution, no new license grant",
+          "source_identifier": "installed-skill:productivity/residential-development-data-layer/references/lago-bello-hoa-seo-links.md"
+        }
+      ],
+      "extracted_sections": [
+        "Live-first anchor audit",
+        "Attribute distinction",
+        "Editorial wording and draft labeling"
+      ],
+      "safety_transformations": [
+        "Kept only public domain/site context",
+        "No copied historical live link inventory",
+        "HOA-owned skill remains under HOA organization"
+      ]
+    }
+  ]
+}

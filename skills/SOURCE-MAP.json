@@ -8,7 +8,7 @@
     {
       "name": "lagohoa-website-link-review",
       "skill_path": "skills/lagohoa-website-link-review/SKILL.md",
-      "output_sha256": "bca8f29ab316a47db7c13e1f0860a8b1107c5d025580fb56456a71a5d11e53f9",
+      "output_sha256": "5cc6c257ff13c72bb03e130f1c68616a137df1dc06ecaaed91e93ec35c32e4d2",
       "supporting_files": [],
       "sources": [
         {
@@ -26,6 +26,14 @@
         "Kept only public domain/site context",
         "No copied historical live link inventory",
         "HOA-owned skill remains under HOA organization"
+      ],
+      "revision_history": [
+        {
+          "version": "0.1.0",
+          "output_sha256": "bca8f29ab316a47db7c13e1f0860a8b1107c5d025580fb56456a71a5d11e53f9",
+          "superseded_by": "0.1.1",
+          "reason": "Read-only platform tests exposed access, revision and evidence-boundary gaps; source attribution remains unchanged."
+        }
       ]
     }
   ]
